@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DesafioPOO_FlashDrive/1.0.0": {
+        "runtime": {
+          "DesafioPOO_FlashDrive.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DesafioPOO_FlashDrive/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

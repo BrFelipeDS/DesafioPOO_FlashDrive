@@ -1,0 +1,16 @@
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.exe
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.deps.json
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.runtimeconfig.json
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.runtimeconfig.dev.json
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.dll
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\bin\Debug\net5.0\DesafioPOO_FlashDrive.pdb
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.csproj.AssemblyReference.cache
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.AssemblyInfoInputs.cache
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.AssemblyInfo.cs
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.csproj.CoreCompileInputs.cache
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.dll
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\refint\DesafioPOO_FlashDrive.dll
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.pdb
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\DesafioPOO_FlashDrive.genruntimeconfig.cache
+C:\Users\Granito\source\repos\DesafioPOO_FlashDrive\DesafioPOO_FlashDrive\obj\Debug\net5.0\ref\DesafioPOO_FlashDrive.dll
