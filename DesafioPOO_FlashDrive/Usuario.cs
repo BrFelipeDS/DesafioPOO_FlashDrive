@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DesafioPOO_FlashDrive
@@ -27,12 +28,27 @@ namespace DesafioPOO_FlashDrive
             }
         }
 
-        //public Usuario Cadastrar()
-        //{
+        public void Cadastrar()
+        {
+            Console.Write("Insira seu nome: ");
+            Nome = Console.ReadLine();
             
+            Console.Write("Insira seu email: ");
+            Email = Console.ReadLine();
+            
+            Console.Write("Insira seu contato ((xx) xxxxx-xxxx): ");
+            Contato = Console.ReadLine();
 
-        //    Console.Write("Insira seu nome: ");
-        //}
+
+            Console.Write("Insira uma senha: ");
+            Senha = Console.ReadLine();
+
+
+            Console.Write("Usuário cadastrado com sucesso!");
+            Thread.Sleep(3000);
+
+
+        }
 
     }
 }
