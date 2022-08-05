@@ -148,7 +148,9 @@ namespace DesafioPOO_FlashDrive
                                     if (debito[int.Parse(escolha) - 1].Saldo < ViagemAtiva.Valor)
                                     {
                                         Console.Clear();
-                                        Console.WriteLine("Saldo insuficiente para o pagamento. Selecione outro método.");
+                                        cabecalho.Cabecalho("Nova Viagem");
+                                        Console.Write("\nSaldo insuficiente para o pagamento. Selecione outro método.");
+                                        Thread.Sleep(3000);
                                         sair = false;
                                         continue;
                                     }
@@ -175,19 +177,19 @@ namespace DesafioPOO_FlashDrive
                                 escolha = Console.ReadLine();
                                 valido = int.TryParse(escolha, out escolhaInt);
 
-                                while (escolhaInt > debito.Count + 1 || escolhaInt <= 0 || !valido)
+                                while (escolhaInt > credito.Count + 1 || escolhaInt <= 0 || !valido)
                                 {
                                     Console.Clear();
                                     cabecalho.Cabecalho("Nova Viagem");
                                     Console.WriteLine("Opção inválida, tente novamente.");
-                                    Console.Write("\n\nEscolha um dos cartões de débito cadastrados: \n\n");
+                                    Console.Write("\n\nEscolha um dos cartões de crédito cadastrados: \n\n");
 
-                                    for (int i = 0; i < debito.Count; i++)
+                                    for (int i = 0; i < credito.Count; i++)
                                     {
-                                        Console.Write($"{i + 1} - {debito[i].NomeMetodo}\n");
+                                        Console.Write($"{i + 1} - {credito[i].NomeMetodo}\n");
                                     }
 
-                                    Console.Write($"{debito.Count + 1} - Sair\n");
+                                    Console.Write($"{credito.Count + 1} - Sair\n");
 
                                     Console.Write("\nSua escolha: ");
                                     escolha = Console.ReadLine();
@@ -200,17 +202,18 @@ namespace DesafioPOO_FlashDrive
                                 }
                                 else
                                 {
-                                    if (credito[int.Parse(escolha) - 1].Limite < ViagemAtiva.Valor)
+                                    if (credito[escolhaInt - 1].Limite < ViagemAtiva.Valor)
                                     {
                                         Console.Clear();
                                         cabecalho.Cabecalho("Nova Viagem");
-                                        Console.WriteLine("Limite insuficiente para o pagamento. Selecione outro método.");
+                                        Console.Write("\nLimite insuficiente para o pagamento. Selecione outro método.");
+                                        Thread.Sleep(3000);
                                         sair = false;
                                         continue;
                                     }
                                     else
                                     {
-                                        credito[int.Parse(escolha) - 1].ReduzirLimite(ViagemAtiva.Valor);
+                                        credito[escolhaInt - 1].ReduzirLimite(ViagemAtiva.Valor);
                                         sair = true;
                                         break;
                                     }
@@ -351,20 +354,59 @@ namespace DesafioPOO_FlashDrive
                     Console.Write("Insira o nome do titular do cartão: ");
                     debito.NomeTitular = Console.ReadLine();
 
+                    while (String.IsNullOrWhiteSpace(debito.NomeTitular))
+                    {
+                        Console.Write("Nome inválido. Tente novamente: ");
+                        debito.NomeTitular = Console.ReadLine();
+                    }
+
+
                     Console.Write("Insira o número do cartão: ");
                     debito.Numero = Console.ReadLine();
 
-                    Console.Write("Insira a validade do cartão (mm/aa): ");
+                    while (!double.TryParse(debito.Numero, out double aux))
+                    {
+                        Console.Write("Número inválido. Tente novamente: ");
+                        debito.Numero = Console.ReadLine();
+                    }
+
+
+                    Console.Write("Insira o ano de validade do cartão: ");
                     debito.Validade = Console.ReadLine();
+
+                    while (!int.TryParse(debito.Validade, out int aux))
+                    {
+                        Console.Write("Ano inválido. Tente novamente: ");
+                        debito.Validade = Console.ReadLine();
+                    }
 
                     Console.Write("Insira o CVV do cartão: ");
                     debito.CVV = Console.ReadLine();
 
+                    while (!int.TryParse(debito.CVV, out int aux) || debito.CVV.Length > 3)
+                    {
+                        Console.Write("CVV inválido. Tente novamente: ");
+                        debito.CVV = Console.ReadLine();
+                    }
+
+
                     Console.Write("Informe o saldo do cartão: ");
-                    debito.Saldo = double.Parse(Console.ReadLine());
+                    bool valido = double.TryParse(Console.ReadLine(), out debito.Saldo);
+
+                    while (!valido)
+                    {
+                        Console.Write("Saldo inválido. Tente novamente: ");
+                        valido = double.TryParse(Console.ReadLine(), out debito.Saldo);
+                    }   
 
                     Console.Write("Informe um nome para o método de pagamento: ");
                     debito.NomeMetodo = Console.ReadLine();
+
+                    while (String.IsNullOrWhiteSpace(debito.NomeMetodo))
+                    {
+                        Console.Write("Nome inválido. Tente novamente: ");
+                        debito.NomeMetodo = Console.ReadLine();
+                    }
 
                     Console.Clear();
                     cabecalho.Cabecalho("Método de Pagamento");
@@ -388,6 +430,7 @@ namespace DesafioPOO_FlashDrive
                     if (escolha == "1")
                     {
                         pagamentos.Add(debito);
+                        sair = true;
                     }
                     else
                     {
@@ -427,20 +470,59 @@ namespace DesafioPOO_FlashDrive
                     Console.Write("Insira o nome do titular do cartão: ");
                     credito.NomeTitular = Console.ReadLine();
 
+                    while (String.IsNullOrWhiteSpace(credito.NomeTitular))
+                    {
+                        Console.Write("Nome inválido. Tente novamente: ");
+                        credito.NomeTitular = Console.ReadLine();
+                    }
+
+
                     Console.Write("Insira o número do cartão: ");
                     credito.Numero = Console.ReadLine();
 
-                    Console.Write("Insira a validade do cartão (mm/aa): ");
+                    while (!double.TryParse(credito.Numero, out double aux))
+                    {
+                        Console.Write("Número inválido. Tente novamente: ");
+                        credito.Numero = Console.ReadLine();
+                    }
+
+
+                    Console.Write("Insira o ano de validade do cartão: ");
                     credito.Validade = Console.ReadLine();
+
+                    while (!int.TryParse(credito.Validade, out int aux))
+                    {
+                        Console.Write("Ano inválido. Tente novamente: ");
+                        credito.Validade = Console.ReadLine();
+                    }
 
                     Console.Write("Insira o CVV do cartão: ");
                     credito.CVV = Console.ReadLine();
 
-                    Console.Write("Informe o saldo do cartão: ");
-                    credito.Limite = double.Parse(Console.ReadLine());
+                    while (!int.TryParse(credito.CVV, out int aux) || credito.CVV.Length > 3)
+                    {
+                        Console.Write("CVV inválido. Tente novamente: ");
+                        credito.CVV = Console.ReadLine();
+                    }
+
+
+                    Console.Write("Informe o limite do cartão: ");
+                    bool valido = double.TryParse(Console.ReadLine(), out credito.Limite);
+
+                    while (!valido)
+                    {
+                        Console.Write("Saldo inválido. Tente novamente: ");
+                        valido = double.TryParse(Console.ReadLine(), out credito.Limite);
+                    }   
 
                     Console.Write("Informe um nome para o método de pagamento: ");
                     credito.NomeMetodo = Console.ReadLine();
+
+                    while (String.IsNullOrWhiteSpace(credito.NomeMetodo))
+                    {
+                        Console.Write("Nome inválido. Tente novamente: ");
+                        credito.NomeMetodo = Console.ReadLine();
+                    }
 
                     Console.Clear();
                     cabecalho.Cabecalho("Método de Pagamento");
@@ -464,6 +546,7 @@ namespace DesafioPOO_FlashDrive
                     if (escolha == "1")
                     {
                         pagamentos.Add(credito);
+                        sair = true;
                     }
                     else
                     {

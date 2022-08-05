@@ -19,7 +19,11 @@ namespace DesafioPOO_FlashDrive
             conta = new ContaBancaria("Triss", ContaBancaria.ETipoConta.Poupanca, "67890", "789", "123456788");
             Motorista user3 = new Motorista("Triss", "ruivinha@gmail.com", "melhorqueaYen", "08009090",carro,conta);
             motoristas.Add(user3);
-            
+            carro = new Veiculo("GHI8900", "Ka", "Prata");
+            conta = new ContaBancaria("Yen", ContaBancaria.ETipoConta.Poupanca, "6666", "777", "123456788");
+            Motorista user4 = new Motorista("Yen", "feiticeirabraba@gmail.com", "melhorqueaTriss", "08009090", carro, conta);
+            motoristas.Add(user4);
+
             Dinheiro dinheiro = new Dinheiro();            
             user1.pagamentos.Add(dinheiro);
            
@@ -77,6 +81,7 @@ namespace DesafioPOO_FlashDrive
                 }
                 else { sair = false; }
                 Console.Clear();
+                cabecalho.Cabecalho("Flash Drive");
             } while (!sair);
 
             Console.Clear();
