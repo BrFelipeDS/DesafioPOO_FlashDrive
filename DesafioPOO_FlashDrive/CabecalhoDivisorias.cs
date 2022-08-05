@@ -26,5 +26,24 @@ namespace DesafioPOO_FlashDrive
             Console.Write("\n\n");
 
         }
+
+        public void Despedida(string titulo)
+        {
+            for (int i = 0; i < Console.WindowWidth; i++)
+            {
+                Console.Write("=");
+            }
+            Console.Write("\n\n");
+            Console.Write("\t\t\t\t    " + titulo);
+            Console.Write("\n\n");
+
+            for (int i = 0; i < Console.WindowWidth; i++)
+            {
+                Console.Write("=");
+            }
+
+            Console.Write("\n\n");
+
+        }
     }
 }

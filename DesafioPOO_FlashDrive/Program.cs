@@ -80,8 +80,8 @@ namespace DesafioPOO_FlashDrive
             } while (!sair);
 
             Console.Clear();
-            cabecalho.Cabecalho("Flash Drive");
-            Console.WriteLine("Obrigado pela preferência! Até mais!");
+            cabecalho.Despedida("Obrigado por escolher a Flash Drive! Até mais!");
+            //Console.WriteLine("Obrigado por escolher a Flash Drive! Até mais!");
         }
 
        
